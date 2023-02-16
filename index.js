@@ -1,25 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
+import fs, { readFileSync } from "fs";
 
-const books = [
-  {
-    isbn: "213123",
-    title: "ქარავანი",
-    author: "ჯემალ ქარჩხაძე",
-  },
-  {
-    isbn: "53231",
-    title: "გზაზე ერთი კაცი მიდიოდა",
-    author: "ოთარ ჭილაძე",
-  },
-  {
-    isbn: "09987",
-    title: "სამოსელი პირველი",
-    author: "გურამ დოჩანაშვილი",
-  },
-];
+const books = JSON.parse(fs.readFileSync("./db/books.json").toString());
 
 const app = express();
+app.use(bodyParser.json());
 const port = 4001;
 
 app.get("/", (req, res) => {
@@ -31,9 +17,13 @@ app.get("/books", (req, res) => {
 });
 
 app.post("/books", (req, res) => {
-  console.log("POST Request received");
+  console.log(req.body);
 
-  res.send("POST Request Response");
+  books.push(req.body);
+
+  fs.writeFileSync("./db/books.json", JSON.stringify(books));
+
+  res.send("Request recieved");
 });
 
 app.listen(port, () => {
