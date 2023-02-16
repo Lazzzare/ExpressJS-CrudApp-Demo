@@ -1,0 +1,19 @@
+{
+  "name": "expressjs-crudapp-demo",
+  "version": "1.0.0",
+  "description": "Crud Application with nodeJS and ExpressJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lazzzare/ExpressJS-CrudApp-Demo.git"
+  },
+  "author": "Lazzzare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lazzzare/ExpressJS-CrudApp-Demo/issues"
+  },
+  "homepage": "https://github.com/Lazzzare/ExpressJS-CrudApp-Demo#readme"
+}
