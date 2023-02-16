@@ -1,5 +1,6 @@
 {
   "name": "expressjs-crudapp-demo",
+  "type": "module",
   "version": "1.0.0",
   "description": "Crud Application with nodeJS and ExpressJS",
   "main": "index.js",
