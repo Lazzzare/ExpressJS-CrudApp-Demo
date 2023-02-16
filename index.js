@@ -26,7 +26,7 @@ app.post("/books", (req, res) => {
     fs.writeFileSync("./db/books.json", JSON.stringify(books));
     res.send("Request recieved");
   } else {
-    res.status(400).send("dublicate isbn found. error!");
+    res.status(409).send("dublicate isbn found. error!");
   }
 });
 
