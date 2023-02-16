@@ -29,6 +29,12 @@ app.get("/books", (req, res) => {
   res.json(books);
 });
 
+app.post("/books", (req, res) => {
+  console.log("POST Request received");
+
+  res.send("POST Request Response");
+});
+
 app.listen(port, () => {
   console.log(`Started server on port: ${port}`);
 });
