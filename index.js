@@ -21,10 +21,13 @@ app.post("/books", (req, res) => {
   const result = books.filter((book) => newBook.isbn === book.isbn);
   console.log(result);
 
-  // books.push(req.body);
-
-  // fs.writeFileSync("./db/books.json", JSON.stringify(books));
-  res.send("Request recieved");
+  if (result.length === 0) {
+    books.push(req.body);
+    fs.writeFileSync("./db/books.json", JSON.stringify(books));
+    res.send("Request recieved");
+  } else {
+    res.status(400).send("dublicate isbn found. error!");
+  }
 });
 
 app.listen(port, () => {
