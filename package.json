@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Lazzzare/ExpressJS-CrudApp-Demo/issues"
   },
-  "homepage": "https://github.com/Lazzzare/ExpressJS-CrudApp-Demo#readme"
+  "homepage": "https://github.com/Lazzzare/ExpressJS-CrudApp-Demo#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
