@@ -17,12 +17,13 @@ app.get("/books", (req, res) => {
 });
 
 app.post("/books", (req, res) => {
-  console.log(req.body);
+  const newBook = req.body;
+  const result = books.filter((book) => newBook.isbn === book.isbn);
+  console.log(result);
 
-  books.push(req.body);
+  // books.push(req.body);
 
-  fs.writeFileSync("./db/books.json", JSON.stringify(books));
-
+  // fs.writeFileSync("./db/books.json", JSON.stringify(books));
   res.send("Request recieved");
 });
 
