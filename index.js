@@ -30,6 +30,23 @@ app.post("/books", (req, res) => {
   }
 });
 
+app.delete("/books/:isbn", (req, res) => {
+  const isbn = req.params.isbn;
+
+  for (let i = 0; i < books.length; i++) {
+    let book = books[i];
+
+    if (book.isbn === isbn) {
+      const deleted = books.splice(i, 1);
+      console.log(books);
+
+      fs.writeFileSync("./db/books.json", JSON.stringify(books));
+
+      res.json(deleted);
+    }
+  }
+});
+
 app.listen(port, () => {
   console.log(`Started server on port: ${port}`);
 });
