@@ -45,6 +45,7 @@ app.delete("/books/:isbn", (req, res) => {
       res.json(deleted);
     }
   }
+  res.status(404).send(`Book with isbn: ${isbn} not found`);
 });
 
 app.listen(port, () => {
